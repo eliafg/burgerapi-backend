@@ -1,0 +1,34 @@
+{
+  "name": "burgerapi-backend",
+  "version": "1.0.0",
+  "description": "Backend para el proyecto de SDI",
+  "main": "index.js",
+  "scripts": {
+    "start" : "node server/server.js",
+    "dev2" : "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eliafg/burgerapi-backend.git"
+  },
+  "keywords": [
+    "sdi",
+    "burgerapi"
+  ],
+  "author": "Eliaf G",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eliafg/burgerapi-backend/issues"
+  },
+  "homepage": "https://github.com/eliafg/burgerapi-backend#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongodb": "^4.12.0",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
