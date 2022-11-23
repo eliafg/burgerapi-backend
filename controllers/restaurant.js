@@ -90,6 +90,7 @@ class restaurantController {
             if(restaurantSchema.isValid(req.body).then( async function(valid){
                 if(valid){
                     //CONEXIÓN A LA BASE DE DATOS
+                    let db_connect = dbo.getDb("burgerapi");
                     const restaurant = await db_connect
                             .collection("restaurants").
                             updateOne({restaurantId: parseInt(req.params.restaurantId)},{ $set: {'name': req.body.name, 'address': req.body.address}});
