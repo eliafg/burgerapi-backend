@@ -78,7 +78,7 @@ class reviewController {
                     let reviewId = { reviewId: parseInt(req.params.reviewId)};
                     db_connect
                     .collection("reviews")
-                    updateOne({reviewId: parseInt(req.params.reviewId)},{ $set: {'comment': req.body.comment, 'score': req.body.score, 'dateReviewed': req.body.dateReviewed}});
+                    .updateOne({reviewId: parseInt(req.params.reviewId)},{ $set: {'comment': req.body.comment, 'score': req.body.score, 'dateReviewed': req.body.dateReviewed}});
                     }
                     
                 else{
