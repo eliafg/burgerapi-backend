@@ -30,9 +30,6 @@ class restaurantController {
     
     getRestaurants(req, res) {
         if(req.params['API_KEY'] == process.env.KEY_YANITZA || req.params['API_KEY'] == "devsdi"){
-            //VALIDACIÓN DE JSON
-            if(restaurantSchema.isValid(req.body).then( function(valid){
-                if(valid){
                     //CONEXIÓN A LA BASE DE DATOS
                     let db_connect = dbo.getDb("burgerapi");
                     db_connect
@@ -44,13 +41,6 @@ class restaurantController {
                         if (err) throw err;
                         res.json(result);
                         });
-                    }
-                    
-                else{
-                        console.log(JSON.stringify(req.body, null, 2));
-                        res.json("Error en la creación. ¿Quizá definiste mal el request Body?"); 
-                }
-                }));
             }
         else {
             res.json("Error de seguridad, esta llave es inválida.")
@@ -59,9 +49,6 @@ class restaurantController {
 
     getSingleRestaurant(req, res) {
         if(req.params['API_KEY'] == process.env.KEY_YANITZA || req.params['API_KEY'] == "devsdi"){
-            //VALIDACIÓN DE JSON
-            if(restaurantSchema.isValid(req.body).then( function(valid){
-                if(valid){
                     //CONEXIÓN A LA BASE DE DATOS
                     let db_connect = dbo.getDb("burgerapi");
                     let restaurantId = { restaurantId: parseInt(req.params.restaurantId)};
@@ -71,13 +58,6 @@ class restaurantController {
                         if (err) throw err;
                         res.json(result);
                     });
-                    }
-                    
-                else{
-                        console.log(JSON.stringify(req.body, null, 2));
-                        res.json("Error en la creación. ¿Quizá definiste mal el request Body?"); 
-                }
-                }));
             }
         else {
             res.json("Error de seguridad, esta llave es inválida.")
