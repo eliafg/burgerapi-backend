@@ -79,6 +79,7 @@ class reviewController {
                     db_connect
                     .collection("reviews")
                     .updateOne({reviewId: parseInt(req.params.reviewId)},{ $set: {'comment': req.body.comment, 'score': req.body.score, 'dateReviewed': req.body.dateReviewed}});
+                    res.json("Reseña actualizada"); 
                     }
                     
                 else{
